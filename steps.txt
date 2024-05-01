@@ -1,0 +1,32 @@
+git config --global user.name bruno-martignago
+git config --global user.email brunomartignago106@gmail.com
+
+dotnet new mvc -o GalloFlix
+
+dotnet new sln --name GalloFlix
+
+dotnet sln add GalloFlix/GalloFlix.csproj
+
+Criar as classes de dados - Pasta Models
+
+Instalar os pacotes necessários:
+    Shift + Ctrl + P -> Nuget
+    Pesquisar e Instalar: 
+        EntityframeworkCore
+        EntityframeworkCore.Design
+        EntityframeworkCore.Tools
+        Pomelo
+
+Criar uma pasta Data - AppDbContext
+
+Criar a ConnectionString no arquivo appsettings.json
+
+Criar o serviço de DbContext no Program.cs
+
+dotnet tool install -g dotnet-aspnet-codegenerator --version 8.0.1
+
+Criar um controller - CRUD;
+dotnet-aspnet-codegenerator controller -name GenresController -m Genre -dc AppDbContext -outDir Controllers -udl
+
+Instalar Pacotes:
+    Microsoft.VisualStudio.Web.CodeGeneration.Design
